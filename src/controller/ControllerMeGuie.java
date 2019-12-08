@@ -22,8 +22,7 @@ import model.Usuario;
 public class ControllerMeGuie {
     static ArrayList<Usuario> usuarios = new ArrayList<>();
     static ArrayList<Cidade> cidades = new ArrayList<>();
-    static ArrayList<Teatro> teatros = new ArrayList<>();
-    static ArrayList<Hotel> hoteis = new ArrayList<>();
+    static ArrayList<PontoTuristico> pontosTuristicos = new ArrayList<>();
     static ArrayList<Avaliacao> avaliacoes = new ArrayList<>();
     
     static Usuario usuario = new Usuario();
@@ -67,23 +66,13 @@ public class ControllerMeGuie {
         return false;
     }
     
-    public boolean cadastrarTeatro(boolean internacional, boolean publico, String nome, String localizacao, String bairro){
-        for(int i=0; i<teatros.size(); i++){
-            if(teatros.get(i).getNome().equals(nome)){
+    public boolean cadastrarPontoTuristico(boolean internacional, boolean publico, String nome, String localizacao, String bairro){
+        for(int i=0; i<pontosTuristicos.size(); i++){
+            if(pontosTuristicos.get(i).getNome().equals(nome)){
                 return false;
             }
         }
         teatros.add(new Teatro(internacional, publico, nome, localizacao, bairro));
-        return true;
-    }
-    
-    public boolean cadastrarHotel(int estrelas, float preco, boolean ar, boolean cafe, String nome, String localizacao, String bairro){
-        for(int i=0; i<teatros.size(); i++){
-            if(teatros.get(i).getNome().equals(nome)){
-                return false;
-            }
-        }
-        hoteis.add(new Hotel(estrelas, preco, ar, cafe, nome, localizacao, bairro));
         return true;
     }
     
